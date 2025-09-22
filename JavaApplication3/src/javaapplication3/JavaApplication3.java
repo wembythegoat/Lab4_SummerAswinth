@@ -41,43 +41,43 @@ public class JavaApplication3 extends Application {
         TextField textnbOfDays = new TextField();
         grid.add(textnbOfDays, 0, 1);
         
-        Label Airfare = new Label("Amount of airfare:");
+        Label Airfare = new Label("Amount of airfare ($):");
         grid.add(Airfare, 0, 2);
         
         TextField airfare = new TextField();
         grid.add(airfare, 0, 3);
         
-        Label carFees = new Label("Amout of car rental fees, if any:");
+        Label carFees = new Label("Amout of car rental fees, if any ($):");
         grid.add(carFees, 0, 4);
         
         TextField car = new TextField();
         grid.add(car, 0, 5);
         
-        Label milesDriven =  new Label("Number of miles driven:");
+        Label milesDriven =  new Label("Number of miles driven ($):");
         grid.add(milesDriven, 0, 6);
         
         TextField miles = new TextField();
         grid.add(miles, 0, 7);
         
-        Label ParkingFees = new Label("Amount of parking fees:");
+        Label ParkingFees = new Label("Amount of parking fees ($):");
         grid.add(ParkingFees, 0, 8);
         
         TextField parking = new TextField();
         grid.add(parking, 0, 9);
         
-        Label TaxiCharges = new Label("Amount of taxi charges:");
+        Label TaxiCharges = new Label("Amount of taxi charges ($):");
         grid.add(TaxiCharges, 0, 10);
         
         TextField taxi = new TextField();
         grid.add(taxi, 0, 11);
         
-        Label seminarFees = new Label("Conference or seminar registration fees:");
+        Label seminarFees = new Label("Conference or seminar registration fees ($):");
         grid.add(seminarFees, 0, 12);
         
         TextField seminar = new TextField();
         grid.add(seminar, 0, 13);
         
-        Label LodgingCharges = new Label("Lodging charges, per night:");
+        Label LodgingCharges = new Label("Lodging charges, per night ($):");
         grid.add(LodgingCharges, 0, 14);
         
         TextField lodging = new TextField();
@@ -131,6 +131,7 @@ public class JavaApplication3 extends Application {
         });
         
         Scene scene = new Scene(grid, 300, 800);
+        scene.getStylesheets().add("style.css");
         stage.setScene(scene);
         
         stage.show();
