@@ -13,6 +13,9 @@ import javafx.stage.Stage;
  *
  * @author 2472557
  */
+
+//GitHub Link: https://github.com/wembythegoat/Lab4_SummerAswinth.git
+
 public class JavaApplication1 extends Application{
 
     /**
