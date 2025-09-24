@@ -1,9 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
-package javaapplication3;
-
+package javaapplication1;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -14,12 +9,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
 /**
  *
  * @author 2472557
  */
-public class JavaApplication3 extends Application {
+public class JavaApplication1 extends Application{
 
     /**
      * @param args the command line arguments
@@ -27,7 +21,6 @@ public class JavaApplication3 extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
     @Override
     public void start(Stage stage) {
         GridPane grid = new GridPane();
@@ -86,6 +79,9 @@ public class JavaApplication3 extends Application {
         Button btn = new Button("Calculate");
         grid.add(btn, 0, 16);
         
+        final Text actiontarget0 = new Text();
+        grid.add(actiontarget0, 0, 17);
+        
         final Text actiontarget = new Text();
         grid.add(actiontarget, 0, 17);
         
@@ -122,6 +118,13 @@ public class JavaApplication3 extends Application {
             double excess = Math.max(0, TotalCost - allowedTotal);
             double savings = Math.max(0, allowedTotal - TotalCost);
             
+            if(days < 0 || airfareFees < 0 || carRental < 0 || milesFees < 0 || parkingFees < 0 || taxiFees < 0 || conferenceFees < 0 || lodgingPerNight < 0) {
+                actiontarget0.setText("Wrong input");
+                
+                return;
+            }
+           
+            
             actiontarget.setText("Total Expenses: " + TotalCost);
             actiontarget2.setText("Total allowable expenses: " + allowedTotal);
             actiontarget3.setText("Excess amount: " + excess);
@@ -130,8 +133,8 @@ public class JavaApplication3 extends Application {
             
         });
         
-        Scene scene = new Scene(grid, 300, 800);
-        scene.getStylesheets().add("style.css");
+        Scene scene = new Scene(grid, 400, 800);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setScene(scene);
         
         stage.show();
